@@ -1,0 +1,1 @@
+stocks.sandynichols.net - personal stockmarket dashboard for Sandy Nichols learning how to work with APIs, jquery, and learn how to watch stocks at the same time.

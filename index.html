@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!-- jquery and more -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<!-- Plotly.js -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- our script --> 
+<script type='text/javascript' src='sample.js'></script>
+
+<title>Alpha Vantage Sample</title>
+</head>
+<body>
+
+
+<form>
+	<div class="form-row">
+		<div class="col input-group mb-3">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text" id="stock-name">Stock</span>
+		  </div>
+		  <input id="stock" type="text" class="form-control" placeholder="Stock" aria-label="Stock" aria-describedby="stock-name">
+		</div>
+
+		<div class="col input-group mb-3">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text" id="api-key">API Key</span>
+		  </div>
+		  <input id="key" type="text" class="form-control" placeholder="Your API Key" aria-label="key" aria-describedby="api-key">
+		</div>
+	</div>
+
+	<!-- div for checking time resolution -->
+	<div class="btn-group btn-group-toggle" data-toggle="buttons">
+		<label class="btn btn-secondary active">
+			<input type="radio" name="intervals" id="1min" autocomplete="off" value="1min" checked> 1min
+		</label>
+		<label class="btn btn-secondary">
+			<input type="radio" name="intervals" id="5min" autocomplete="off" value="5min"> 5min
+		</label>
+		<label class="btn btn-secondary">
+			<input type="radio" name="intervals" id="15min" autocomplete="off" value="15min"> 15min
+		</label>
+		<label class="btn btn-secondary">
+			<input type="radio" name="intervals" id="30min" autocomplete="off" value="30min"> 30min
+		</label>
+		<label class="btn btn-secondary">
+			<input type="radio" name="intervals" id="60min" autocomplete="off" value="60min"> 60min
+		</label>
+	</div>
+
+	<!-- option to also graph a technical indicator -->
+	<div class="dropdown">
+	  Show Technical Indicator:
+	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    None
+	  </button>
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+	  	<a class="dropdown-item" href="#">None</a>
+	  	<a class="dropdown-item" href="#">SMA</a>
+		<a class="dropdown-item" href="#">EMA</a>
+	    <a class="dropdown-item" href="#">WMA</a>
+	  </div>
+	</div>
+
+	<!-- Query! -->
+	<div>
+		<button type="button" class="btn btn-outline-primary" id="button-query">Query!</button>
+	</div>
+
+
+
+</form>
+
+<div id="graph"></div>
+
+</body>
+</html>
